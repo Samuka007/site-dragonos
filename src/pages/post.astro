@@ -1,0 +1,74 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import dragonosLogo from "../assets/dragonos.png";
+
+// Filter blog entries with 'draft: false' & date before current date
+const postEntries = await getCollection("post", ({ data }) => {
+  return data.date < new Date();
+});
+
+// Sort content entries by publication date
+postEntries.sort(function (a, b) {
+  return b.data.date.valueOf() - a.data.date.valueOf();
+});
+---
+
+<Layout title="Post">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">DragonOS Post</Fragment>
+      <Fragment slot="desc">
+        We write about building startups and thoughts going on our mind.
+      </Fragment>
+    </Sectionhead>
+    <main class="mt-16">
+      <ul class="grid gap-16 max-w-4xl mx-auto">
+        {
+          postEntries.map((postDetailEntry, index) => (
+            <li>
+              <a href={`/post/${postDetailEntry.slug}`}>
+                <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
+                  <Picture
+                    src={dragonosLogo}
+                    alt="cover image"
+                    sizes="(max-width: 800px) 100vw, 800px"
+                    width={1024}
+                    height={275}
+                    loading={index <= 2 ? "eager" : "lazy"}
+                    decoding={index <= 2 ? "sync" : "async"}
+                    class="w-full rounded-md object-cover object-center bg-white"
+                  />
+                  <div>
+                    <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+                      {postDetailEntry.data.categories}
+                    </span>
+
+                    <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1 ">
+                      {postDetailEntry.data.title}
+                    </h2>
+
+                    <div class="flex gap-2 mt-3">
+                      <span class="text-gray-400">
+                        DragonOS Community
+                      </span>
+                      <span class="text-gray-400">• </span>
+                      <time
+                        class="text-gray-400"
+                        datetime={postDetailEntry.data.date.toISOString()}>
+                        {postDetailEntry.data.date.toDateString()}
+                      </time>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+  </Container>
+</Layout>

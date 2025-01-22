@@ -4,55 +4,57 @@ import { Icon } from "astro-icon/components";
 
 const features = [
   {
-    title: "Bring Your Own Framework",
+    title: "面向服务器领域",
     description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+      "DragonOS面向服务器领域应用而开发，在未来，将重点关注数据中心、骨干网络等数字基础设施的操作系统纯国产化替代。",
     icon: "bx:bxs-briefcase",
   },
   {
-    title: "100% Static HTML, No JS",
+    title: "专注安全",
     description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
+      "社区正在使用Rust语言对操作系统进行重构，并通过更严格的代码审查机制，以减少漏洞的产生。",
     icon: "bx:bxs-window-alt",
   },
   {
-    title: "On-Demand Components",
+    title: "社区文化",
     description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
+      "我们最看重的是一个人的对国家、民族、社会的责任感和使命感，而不仅仅是技术能力的高低。",
     icon: "bx:bxs-data",
   },
   {
-    title: "Broad Integration",
+    title: "底层自主",
     description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
+      "我们认为，要从最底层开始开发，才能让我们在将来实现真正的安全可控，在关键领域才能真正“用得放心”。",
     icon: "bx:bxs-bot",
   },
-  {
-    title: "SEO Enabled",
-    description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
-    icon: "bx:bxs-file-find",
-  },
-  {
-    title: "Community",
-    description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-    icon: "bx:bxs-user",
-  },
+  // {
+  //   title: "SEO Enabled",
+  //   description:
+  //     "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
+  //   icon: "bx:bxs-file-find",
+  // },
+  // {
+  //   title: "Community",
+  //   description:
+  //     "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
+  //   icon: "bx:bxs-user",
+  // },
 ];
 ---
 
 <div class="mt-16 md:mt-0">
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Everything you need to start a website
+    为国家数字基础设施建设 
+  </h2>
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    注入完全独立自主的底层核心动力
   </h2>
   <p class="text-lg mt-4 text-slate-600">
-    Astro comes batteries included. It takes the best parts of state-of-the-art
-    tools and adds its own innovations.
+    这是一个长远的目标，我们计划在2032年前，让它变为现实
   </p>
 </div>
 
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+<div class="grid sm:grid-cols-2 md:grid-cols-4 mt-16 gap-16">
   {
     features.map((item) => (
       <div class="flex gap-4 items-start">
