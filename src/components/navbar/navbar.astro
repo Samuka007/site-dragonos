@@ -15,22 +15,22 @@ const menuitems = [
   //     { title: "404 Page", path: "/404" },
   //   ],
   // },
-  // {
-  //   title: "Pricing",
-  //   path: "/pricing",
-  // },
+  {
+    title: "首页",
+    path: "/",
+  },
   {
     title: "文章",
     path: "/post",
   },
   {
     title: "论坛",
-    // badge: true,
+    badge: true,
     path: "https://bbs.dragonos.org.cn/"
   },
   {
-    title: "关于",
-    path: "/about",
+    title: "赞助",
+    path: "/sponsor",
   },
   // {
   //   title: "Contact",
@@ -79,7 +79,7 @@ const menuitems = [
                       <span> {item.title}</span>
                       {item.badge && (
                         <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
-                          New
+                          Hot
                         </span>
                       )}
                     </a>

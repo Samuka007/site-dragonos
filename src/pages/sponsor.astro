@@ -1,0 +1,88 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import wxReward from "../assets/wx-reward.png";
+
+// Filter team entries with 'draft: false' & date before current date
+const publishedTeamMembers = await getCollection("team", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
+---
+
+<Layout title="赞助">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">赞助 DragonOS</Fragment>
+      <Fragment slot="desc">我们的目标是打造完全自主可控的数字化未来！</Fragment>
+    </Sectionhead>
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <h2 class="font-bold text-3xl text-gray-800">
+        前言
+      </h2>
+      <p class="text-lg leading-relaxed text-slate-500">
+        DragonOS是一个公益性质开源项目，但是其日常运营需要一些资金。如果您愿意的话，可以通过以下页面，
+        赞助DragonOS，促进DragonOS的发展，助力我们更快的达到最终目标：为国家数字基础建设注入底层核心动力。
+      </p>
+      <p class="text-lg leading-relaxed text-slate-500">
+        我们感谢每一位赞助者、赞助商，所有的赞助者的名单都会被公示，以表示我们的感谢。
+      </p>
+    </div>
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <h2 class="font-bold text-3xl text-gray-800">
+        赞助方式
+      </h2>
+      <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+        <div class="flex flex-col gap-3">
+          <p class="text-lg font-bold leading-relaxed text-slate-500 text-center">
+            小额微信赞助
+          </p>
+          <p class="text-lg leading-relaxed text-slate-500 text-center">
+            请您在付款备注处注明：</br>DragonOS - 您的 GitHub ID
+          </p>
+          <Picture
+            src={wxReward}
+            alt="微信赞赏码"
+            sizes="(max-width: 800px) 100vw, 400px"
+            width={400}
+            height={400}
+            class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
+          />
+        </div>
+        <div class="flex flex-col gap-3">
+          <p class="text-lg font-bold leading-relaxed text-slate-500 text-center">
+            通过数字人民币赞助
+          </p>
+          <p class="text-lg leading-relaxed text-slate-500 text-center">
+            DragonOS的数字人民币收款钱包编号为：0041004204742954
+          </p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <p class="text-lg font-bold leading-relaxed text-slate-500 text-center">
+            大额赞助/设备赞助/合作
+          </p>
+          <p class="text-lg leading-relaxed text-slate-500 text-center">
+            请通过邮件联系龙进：longjin@DragonOS.org
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <h2 class="font-bold text-3xl text-gray-800">
+        赞助的资金都会被用到哪里？
+      </h2>
+      <p class="text-lg leading-relaxed text-slate-500">
+        * 为活跃的社区开发者发放补贴或设备支持
+      </p>
+      <p class="text-lg leading-relaxed text-slate-500">
+        * 云服务开支 或 设备购置
+      </p>
+      <p class="text-lg leading-relaxed text-slate-500">
+        * 任何有助于DragonOS发展的用途
+      </p>
+    </div>
+  </Container>
+</Layout>

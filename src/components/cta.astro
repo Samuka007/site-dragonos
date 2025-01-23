@@ -1,11 +1,10 @@
 ---
 import Link from "./ui/link.astro";
-import { Picture } from "astro:assets";
 import { Image } from 'astro:assets';
 ---
 
 <div
-  class="bg-black p-8 md:px-20 md:py-20 mt-20 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center">
+  class="bg-black p-8 md:px-20 md:py-20 mt-20 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center gap-5">
   <h2 class="text-white text-4xl md:text-6xl tracking-tight">
     赞助商
   </h2>
@@ -16,10 +15,7 @@ import { Image } from 'astro:assets';
     width={300}
     alt="中国 雅云"
   />
-  <p class="text-slate-400 mt-4 text-lg md:text-xl">
-    中国 · 雅安大数据产业园
-  </p>
-  <!-- <div class="flex mt-5">
-    <Link href="#" style="inverted">Get Started</Link>
-  </div> -->
+  <div class="flex mt-5">
+    <Link href="https://yacloud.net/" style="inverted">中国 · 雅安大数据产业园</Link>
+  </div>
 </div>
