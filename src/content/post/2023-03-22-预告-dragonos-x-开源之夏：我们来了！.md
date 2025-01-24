@@ -3,7 +3,7 @@ title: "预告 | DragonOS X 开源之夏：我们来了！"
 date: "2023-03-22"
 categories: 
   - "社区新闻"
-coverImage: "飞书20230322-095535.jpg"
+coverImage: "/src/content/post/images/飞书20230322-095535.jpg"
 ---
 
 **嘿，各位大佬：**

@@ -7,9 +7,7 @@ import Sectionhead from "@components/sectionhead.astro";
 import dragonosLogo from "../assets/dragonos.png";
 
 // Filter blog entries with 'draft: false' & date before current date
-const postEntries = await getCollection("post", ({ data }) => {
-  return data.date < new Date();
-});
+const postEntries = await getCollection("post");
 
 // Sort content entries by publication date
 postEntries.sort(function (a, b) {
@@ -33,7 +31,7 @@ postEntries.sort(function (a, b) {
               <a href={`/post/${postDetailEntry.slug}`}>
                 <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
                   <Picture
-                    src={dragonosLogo}
+                    src={postDetailEntry.data.coverImage||dragonosLogo}
                     alt="cover image"
                     sizes="(max-width: 800px) 100vw, 800px"
                     width={1024}
