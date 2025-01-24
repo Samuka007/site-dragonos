@@ -5,7 +5,7 @@ categories:
   - "社区新闻"
 tags: 
   - "应用移植"
-coverImage: "截图-2023-11-13-22-42-35.png"
+coverImage: "/src/content/post/images/2023-11-13-22-42-35.png"
 ---
 
 ## 1\. 概要
@@ -16,7 +16,7 @@ coverImage: "截图-2023-11-13-22-42-35.png"
 
 请注意，由于DragonOS尚未完善对动态链接的支持，因此静态链接版本的musl-gcc，能直接在Linux和DragonOS内运行，但不支持动态链接的。
 
-![截图-2023-11-13-22-42-35.png](images/2023-11-13-22-42-35.png)
+![2023-11-13-22-42-35.png](images/2023-11-13-22-42-35.png)
 
 版本信息：
 
